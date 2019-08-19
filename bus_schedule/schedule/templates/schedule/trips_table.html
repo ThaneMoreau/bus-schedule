@@ -1,0 +1,37 @@
+<div id="trips_table">
+  {% if not trips %}
+      <h5>No trips</h5>
+  {% else %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Route</th>
+        <th scope="col">Dispatch time</th>
+        <th scope="col">Arrive time</th>
+        <th scope="col">Travel time</th>
+        <th scope="col">Cost</th>
+        <th scope="col">Luggage</th>
+        <th scope="col">Schedule</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for trip in trips %}
+      <tr>
+        <td>
+          <a href="#" 
+          class="text-info"
+          data-id="{{ trip.related_route.system_id }}">{{ trip.related_route.title }}</a>
+        </td>
+        <td>{{ trip.dispatch_time }}</td>
+        <td>{{ trip.arrive_time }}</td>
+        <td>{{ trip.travel_time }}</td>
+        <td>{{ trip.cost }}</td>
+        <td>{{ trip.cost_luggage }}</td>
+        <td>{{ trip.related_route.schedule }}</td>
+      </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+  </table>
+</div>
+
