@@ -1,5 +1,5 @@
 # Bus schedule
-___
+
 ### Set environoment
     python -m venv venv
     souce venv/bin/activate
